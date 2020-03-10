@@ -6,7 +6,7 @@ import {generatePackage} from './generatePackage';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state =  window.state || {
       title: "DIGITAL LOCK",
       showUsername:"true",
       timeout:"",
@@ -45,11 +45,11 @@ class App extends Component {
             <h1>Configuration</h1>
             <Config {...this.state} onConfigChange={(prop,value)=>{this.setState({[prop]:value}); this.preview();}}/>
 
-
+            <div className="buttons">
               <button onClick={this.download.bind(this)}>
                 <i className="material-icons">cloud_download</i>Dowload
               </button>
-
+            </div>
           </div>
 
           <div className="content-col right">
@@ -63,7 +63,7 @@ class App extends Component {
     );
   }
   preview(){
-    fetch("scorm12/index.html").then(res=>res.text()).then(response=>{
+    fetch(process.env.PUBLIC_URL + "/scorm12/index.html").then(res=>res.text()).then(response=>{
         this.onloadend(response);
     })
 
@@ -76,7 +76,7 @@ class App extends Component {
         window._babelPolyfill = false;
         window.config=JSON.parse('${JSON.stringify({...this.state, dev: true})}');
       </script>`)
-    content = content.replace("bundle.js","scorm12/bundle.js")
+    content = content.replace("bundle.js", process.env.PUBLIC_URL + "/scorm12/bundle.js")
     let el = document.getElementById('visor')
     el.contentWindow.document.open();
     el.contentWindow.document.write(content);
