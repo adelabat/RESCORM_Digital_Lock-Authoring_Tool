@@ -121,7 +121,7 @@ iframe {
 }
 
 
-input {
+input, select {
   font-family: 'Source Sans Pro';
 }
 
@@ -129,8 +129,14 @@ input[type="number"] {
   width: 30px;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"], input[type="number"], select  {
   padding: 5px;
+  background-color: transparent;
+  border: 1px solid grey;
+}
+
+select {
+  height: 30px;
 }
 
 input[type="color"] {
