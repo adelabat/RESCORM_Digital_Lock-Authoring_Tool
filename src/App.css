@@ -11,6 +11,11 @@ header {
   padding-left: 15px;
 }
 
+select {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 h1 {
   font-size: 30px;
   padding:0;

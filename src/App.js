@@ -8,14 +8,12 @@ class App extends Component {
     super(props);
     this.state =  window.state || {
       title: "DIGITAL LOCK",
-      showUsername:"true",
-      timeout:"",
-      answer:"01",
+      showUsername: true,
+      timeout: 0,
+      answer:"8132",
       tip:"Select the top 3 points starting from the left",
       CombinationLockImage:"./../assets/images/CajaFuerte.png",
-      modes:["Symbol", "AlphaNumeric", "Pattern", "CombinationLock"],
       mode:"Pattern",
-      themes:["dark", "lux", "cerulean", "cyborg", "pulse", "sketchy", "superhero"],
       theme:"sketchy",
       good:"Enhorabuena, lo has logrado!!",
       bad:"Lo siento, se acabó tu tiempo",
@@ -33,25 +31,22 @@ class App extends Component {
       <div className="App">
         <header>
           <button className="info" onClick={()=>{this.setState({showInfoModal: true})}}>
-            <i className="material-icons">???</i>
+            <i className="material-icons">info</i>
           </button>
-          <h1><i className="material-icons">lock</i>
-          DIGITAL LOCK
+          <h1>
+            <i className="material-icons">lock</i>DIGITAL LOCK
           </h1>
-          </header>
+        </header>
         <div className="content">
-
           <div className="content-col left">
             <h1>Configuration</h1>
             <Config {...this.state} onConfigChange={(prop,value)=>{this.setState({[prop]:value}); this.preview();}}/>
-
             <div className="buttons">
               <button onClick={this.download.bind(this)}>
                 <i className="material-icons">cloud_download</i>Dowload
               </button>
             </div>
           </div>
-
           <div className="content-col right">
             {/*<h2>Preview</h2>*/}
             <iframe id="visor" title="app" />

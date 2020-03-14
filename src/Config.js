@@ -6,69 +6,47 @@ export default class App extends Component {
 		const options = [
 			{ name: "title:", value: this.props.title, type: "text", callback: (e) => {this.props.onConfigChange("title", e.target.value)}},
 			{ name: "showUsername",  noBreak: true, value: this.props.showUsername, type: "checkbox", callback: (e) => {this.props.onConfigChange("showUsername", !this.props.showUsername,)}},
-			{ name: "timeout", friendlyName: "Timeout", value: this.props.timeout, type: "number", callback: (e) => {this.props.onConfigChange("timeout", parseInt(e.target.value))}},
-			{ name: "Using Escapp??", value: this.props.escapp, type: "checkbox", callback: (e) => {this.props.onConfigChange("escapp", !this.props.escapp,)}},
-			{ name: "Theme", value: this.props.theme, type: "select", options:["dark","lux","cerulean","cyborg","pulse","sketchy","superhero"], callback: (e) => {this.props.onConfigChange("theme", e.target.value)}},
-			{ name: "Quest Type", value: this.props.theme, type: "select", options:["Symbol", "AlphaNumeric", "Pattern", "CombinationLock"], callback: (e) => {this.props.onConfigChange("mode", e.target.value)}}
+			{ name: "Timeout", friendlyName: "Timeout", value: this.props.timeout, type: "number", min: 0, callback: (e) => {this.props.onConfigChange("timeout", parseInt(e.target.value))}},
+			{ name: "Theme", value: this.props.theme, type: "select", options: ["cerulean", "journal", "sketchy", "darkly", "cyborg", "cosmo", "flatly", "lumen", "litera", "lux", "materia", "minty", "pulse", "sandstone", "simplex", "slate", "solar", "spacelab", "superhero", "united", "yeti"], callback: (e) => {this.props.onConfigChange("theme", e.target.value)}},
+			{ name: "Puzzle Type", value: this.props.theme, type: "select", options:["Symbol", "AlphaNumeric", "Pattern", "CombinationLock", "Padlock"], callback: (e) => {this.props.onConfigChange("mode", e.target.value)}},
+			{ name: "Tip", value: this.props.tip, type: "text", callback: (e) => {this.props.onConfigChange("tip", e.target.value)}},
+			{ name: "Using Escapp??", value: this.props.escapp, type: "checkbox", callback: () => {this.props.onConfigChange("escapp", !this.props.escapp)}},
 		];
 
-		let info;
-		let escapp;
-		if(this.props.mode === "CombinationLock"){
-			info= <div>
-					  <label htmlFor="CombinationLockImage"><b>Combination Lock Image: </b></label>
-						<input name="CombinationLockImage:" type="file" value={undefined} onChange={(e) => {this.readFile(e.target.files[0], res => this.props.onConfigChange("CombinationLockImage", res),true)}}/>
-						<br/><br/>
-						<label htmlFor="answer"><b>Combination Lock Answer:</b></label>
-					 	<input name="Answer:" type="text" value={this.props.answer} onChange={(e) => {this.props.onConfigChange("answer", e.target.value)}}/>
-					 	<br/>
-						</div>
-		}
-		if(this.props.mode === "Pattern"){
-			info= <div>
-					  <label htmlFor="tip"><b>Tip:</b> </label>
-						<input name="Tip:" type="text" value={this.props.tip} onChange={(e) => {this.props.onConfigChange("tip", e.target.value)}}/>
-						</div>
-		}
-		if(this.props.escapp){
-			escapp= <div><br/>
-						<label htmlFor="puzzleId"><b>Puzzle Id:</b></label>&nbsp;
-						<input name="puzzleId:" type="number" value={this.props.puzzleId} onChange={(e) => {this.props.onConfigChange("puzzleId", e.target.value)}}/>&nbsp;
-						<label htmlFor="escapeRoomId"><b>Escape Room Id:</b></label>&nbsp;
-						<input name="escapeRoomId:" type="number" value={this.props.escapeRoomId} onChange={(e) => {this.props.onConfigChange("escapeRoomId", e.target.value)}}/>
-						<p/><label htmlFor="puzzleLength"><b>Answer Length:</b></label>&nbsp;
-						<input name="puzzleLength:" type="number" value={this.props.puzzleLength} onChange={(e) => {this.props.onConfigChange("puzzleLength", e.target.value)}}/>
-						</div>
-		}else{
-			if(this.props.mode === "Pattern" || "AlphaNumeric" || "Symbol"){
-				escapp= <div>
-				<p/><label htmlFor="answer"><b>Answer:</b></label><p/>
-				<input name="Answer:" type="text" value={this.props.answer} onChange={(e) => {this.props.onConfigChange("answer", e.target.value)}}/>
-				<p/><label htmlFor=""><b>SuccessMessage</b></label><p/>
-				<input name="successMessage:" type="text" value={this.props.good} onChange={(e) => {this.props.onConfigChange("good", e.target.value)}}/>
-				<p/><label htmlFor=""><b>FailMessage</b></label><p/>
-				<input name="FailMessage:" type="text" value={this.props.bad} onChange={(e) => {this.props.onConfigChange("bad", e.target.value)}}/></div>
+		if (this.props.escapp) { 
+			options.push({ name: "EscapeRoomId", friendlyName: "Escape Room Id", value: this.props.escapeRoomId, type: "number", min: 0, callback: (e) => {this.props.onConfigChange("escapeRoomId", parseInt(e.target.value))}})
+			options.push({ name: "PuzzleId", friendlyName: "Puzzle Id", value: this.props.puzzleId, type: "number", min: 0, callback: (e) => {this.props.onConfigChange("puzzleId", parseInt(e.target.value))}})
+			if (this.props.mode === "Padlock" || this.props.mode === "CombinationLock") {
+				options.push({ name: "Solution", value: this.props.answer, type: "text", callback: (e) => {this.props.onConfigChange("answer", e.target.value)}});
+			} else {
+				options.push({ name: "PuzzleLength", friendlyName: "Puzzle Length", value: this.props.puzzleLength, type: "number", min: 0, callback: (e) => {this.props.onConfigChange("puzzleLength", parseInt(e.target.value))}})
 			}
-
+		} else {
+			options.push({ name: "Solution", value: this.props.answer, type: "text", callback: (e) => {this.props.onConfigChange("answer", e.target.value)}});
+			options.push({ name: "Success Message:", value: this.props.good, type: "text", callback: (e) => {this.props.onConfigChange("good", e.target.value)}});
+			options.push({ name: "Fail Message:", value: this.props.bad, type: "text", callback: (e) => {this.props.onConfigChange("bad", e.target.value)}});
 		}
+		if (this.props.mode === "CombinationLock") {
+			options.splice(5, 0, { name: "CombinationLockImage", value: undefined, type: "file", callback: (e) => {this.readFile(e.target.files[0], res => this.props.onConfigChange("CombinationLockImage", res),true) }});
+		} else if (this.props.mode === "Padlock") {
+			options.splice(5, 0, { name: "Metalic effect", value: !this.props.nonMetallic, type: "checkbox", callback: () => {this.props.onConfigChange("nonMetallic", !this.props.nonMetallic)}});
+		}
+
 
 		return <div className="config">
-			{options.map(opt=>{
-				return [<div className="form-group" >
+			{options.map((opt, i)=>{
+				return opt ? [<div className="form-group" key={opt.name}>
 				<label htmlFor={opt.name}><b>{opt.friendlyName || this.humanize(opt.name)}</b></label>
-				{opt.type == "select" ?
-				<select name={opt.name} onChange={opt.callback}>
-					{opt.options.map(op=><option value={op} selected={op===opt.value}>{this.humanize(op)}</option>)}
+				{opt.type === "select" ?
+				<select name={opt.name} onChange={opt.callback} value={opt.value}>
+					{opt.options.map(op=><option key={op} value={op} >{this.humanize(op)}</option>)}
 				</select>:
 				<input name={opt.name} type={opt.type} value={opt.type === "file"? undefined: opt.value} min={opt.min} checked={opt.value} onChange={opt.callback}/>
 				}
-			</div>, opt.noBreak ? null: <br/>]
+			</div>, opt.noBreak ? null: <br key={"br-"+i}/>] : null
 
 			})}
 			<br/>
-			{info}
-			{escapp}
-
 
 			<br/>
 			<div className="form-group">
