@@ -1,4 +1,4 @@
-# Webapp Password Strength Checker
+# Rescorm_Digital-Lock_Generator
 
 ## Installation
 1. Previous requirements:
