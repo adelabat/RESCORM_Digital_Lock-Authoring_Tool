@@ -43,21 +43,49 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Available Configuration
-#### title: "DIGITAL LOCK",
-#### showUsername: true,
-      timeout: 0,
-      answer:"8132",
-      tip:"Select the top 3 points starting from the left",
-      CombinationLockImage:"./../assets/images/CajaFuerte.png",
-      mode:"Symbol",
-      theme:"sketchy",
-      good:"Enhorabuena, lo has logrado!!",
-      bad:"Lo siento, se acabó tu tiempo",
-      escapp: true,
-      puzzleId: 5,
-      escapeRoomId: 1,
-      puzzleLength: 4,
-      scormVersion: "1.2",
+#### title,
+The name of your app .
+#### showUsername,
+Allows showing or not the username .
+#### timeout,
+Allows setting a time limit.
+#### mode,
+Allows choosing one of the five different game modes.
+* Symbol/Alphanumeric
+* CombinationLock/PadLock
+* Pattern
+#### theme,
+Allows choosing one of the different [bootwatch themes](https://bootswatch.com/).
+#### tip,
+A small text giving some useful information.
+#### escapp,
+Allows using [escapp](https://escapp.dit.upm.es/) for monitoring puzzle´s answer, time and puntuation.
+#### puzzleId,
+#### escapeRoomId,
+#### puzzleLength,
+Configuration of escapp parameters.
+#### answer,
+If you´re not using [escapp](https://escapp.dit.upm.es/), this allows setting puzzles´s answer.
+#### Success Message,
+A small text in case the correct answer was given.
+#### Fail Message,
+A small text in case the wrong answer was given.
+#### ScormVersion,
+* "1.2"
+* "2004"
+      
+## Features
+- [x] SCORM 1.2 and SCORM 2004 4th Editon support
+- [x] ECMAScript 6 and JSX support
+- [x] React 16.0.0
+- [x] React Router v4
+- [x] Redux
+- [x] Webpack (v.3.6.0) and Webpack Dev Server (v.2.8.2)
+- [x] Hot Module Replacement using [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- [x] ES6 linting with continuous linting on file change
+- [x] Separate CSS stylesheets generation
+- [x] SASS support
+- [x] Export Separate Vendor Files      
 
 ## Learn More
 
