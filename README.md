@@ -2,7 +2,8 @@
 
 ## Installation
 1. Previous requirements:
-    * A computer with internet connection
+    * A computer with internet connection.
+    * Operative cmd/Konsole.
 2. Install [git](https://git-scm.com/downloads).
 3. Open a new terminal, go to your working directory and clone this GitHub poject:
     ```bash
