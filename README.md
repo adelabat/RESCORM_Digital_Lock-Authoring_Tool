@@ -63,9 +63,7 @@ Allows choosing one of the different [bootwatch themes](https://bootswatch.com/)
 A small text giving some useful information.
 #### * escapp,
 Allows using [escapp](https://escapp.dit.upm.es/) for monitoring puzzle´s answer, time and puntuation.
-#### * puzzleId,
-#### * escapeRoomId,
-#### * puzzleLength,
+#### * puzzleId, escapeRoomId, puzzleLength,
 Configuration of escapp parameters.
 #### * answer,
 If you´re not using [escapp](https://escapp.dit.upm.es/), this allows setting puzzles´s answer.
