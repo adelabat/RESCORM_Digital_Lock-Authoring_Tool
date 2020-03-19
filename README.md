@@ -1,7 +1,7 @@
 # Webapp Password Strength Checker
 
 ## Installation
-1. Previous requirements
+1. Previous requirements:
     * A computer with internet connection
 2. Install [git](https://git-scm.com/downloads).
 3. Open a new terminal, go to your working directory and clone this GitHub poject:
@@ -42,6 +42,22 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Available Configuration
+#### title: "DIGITAL LOCK",
+#### showUsername: true,
+      timeout: 0,
+      answer:"8132",
+      tip:"Select the top 3 points starting from the left",
+      CombinationLockImage:"./../assets/images/CajaFuerte.png",
+      mode:"Symbol",
+      theme:"sketchy",
+      good:"Enhorabuena, lo has logrado!!",
+      bad:"Lo siento, se acabó tu tiempo",
+      escapp: true,
+      puzzleId: 5,
+      escapeRoomId: 1,
+      puzzleLength: 4,
+      scormVersion: "1.2",
 
 ## Learn More
 
