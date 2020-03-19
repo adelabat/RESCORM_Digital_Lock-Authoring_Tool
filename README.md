@@ -4,7 +4,7 @@
 1. Previous requirements:
     * A computer with internet connection.
     * Operative cmd/Konsole.
-2. Install [git](https://git-scm.com/downloads).
+2. Install [node.js](https://nodejs.org/es/download/) and [git](https://git-scm.com/downloads).
 3. Open a new terminal, go to your working directory and clone this GitHub poject:
     ```bash
     git clone https://github.com/adelabat/Rescorm_Digital-Lock_Generator
@@ -20,8 +20,10 @@
     ```
     The app will be available at the following URL [http://localhost:3000](http://localhost:3000).  
     
-7. Development server can be stopped by pressing 'Ctrl-C'.
-8. Configuration can be specified in:  
+7. Once you had configurated your app, just click on the button 'download' to have your app in a scorm package locally. 
+
+8. Development server can be stopped by pressing 'Ctrl-C'.
+9. Configuration can be specified in:  
     * src/config/Config.js: Global configuration to customize the React application.  
     
 
