@@ -43,38 +43,38 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Available Configuration
-#### title,
+#### * title,
 The name of your app .
-#### showUsername,
+#### * showUsername,
 Allows showing or not the username .
-#### timeout,
+#### * timeout,
 Allows setting a time limit.
-#### mode,
+####  * mode,
 Allows choosing one of the five different game modes.
 * Symbol/Alphanumeric
 * CombinationLock/PadLock
 * Pattern
-#### theme,
+#### * theme,
 Allows choosing one of the different [bootwatch themes](https://bootswatch.com/).
-#### tip,
+#### * tip,
 A small text giving some useful information.
-#### escapp,
+#### * escapp,
 Allows using [escapp](https://escapp.dit.upm.es/) for monitoring puzzle´s answer, time and puntuation.
-#### puzzleId,
-#### escapeRoomId,
-#### puzzleLength,
+#### * puzzleId,
+#### * escapeRoomId,
+#### * puzzleLength,
 Configuration of escapp parameters.
-#### answer,
+#### * answer,
 If you´re not using [escapp](https://escapp.dit.upm.es/), this allows setting puzzles´s answer.
-#### Success Message,
+#### * Success Message,
 A small text in case the correct answer was given.
-#### Fail Message,
+#### * Fail Message,
 A small text in case the wrong answer was given.
-#### ScormVersion,
+#### * ScormVersion,
 * "1.2"
 * "2004"
       
-## Features
+## * Features
 - [x] SCORM 1.2 and SCORM 2004 4th Editon support
 - [x] ECMAScript 6 and JSX support
 - [x] React 16.0.0
@@ -87,7 +87,6 @@ A small text in case the wrong answer was given.
 - [x] SASS support
 - [x] Export Separate Vendor Files      
 
-## Learn More
-
+## * Learn More
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
