@@ -4,19 +4,19 @@
   height: 100%;
 }
 
-header {
+.App header#appHeader {
   background-color: #333;
   color: white;
   height: 60px;
   padding-left: 15px;
 }
 
-select {
+.App  select {
   border-radius: 0;
   -webkit-appearance: none;
 }
 
-h1 {
+.App h1 {
   font-size: 30px;
   padding:0;
   height: 60px;
@@ -26,19 +26,18 @@ h1 {
   font-weight: lighter;
 }
 
-h1 a {
+.App h1 a {
   text-decoration: none;
   color: white;
   font-weight: bold;
 }
 
-h1 i {
-  font-size: 50px;
+.App h1 i {
   color: #20BEB8;
   margin-right: 10px;
 }
 
-h2 {
+.App h2 {
   display: inline-block;
   margin-right: 10px;
   color: #20BEB8;
@@ -46,13 +45,13 @@ h2 {
   margin-bottom: 7px;
 }
 
-.content {
+.App .content {
   display: flex;
   flex-direction: row;
   flex: 1;
 }
 
-.content-col {
+.App .content-col {
   width: 50%;
   padding-left: 15px;
   padding-right: 15px;
@@ -61,46 +60,46 @@ h2 {
   flex-direction: column;
 }
 
-.left {
+.App .left {
   /*background-color: blue;*/
   border-right: 2px solid #ddd;
   flex:7;
 
 }
 
-.right {
+.App .right {
   /*background-color: green;*/
   flex:13;
   padding: 10px;
 
 }
 
-iframe {
+.App iframe {
   height:100%;
   border: 1px solid #ddd;
 }
 
-.config {
+.App .config {
   flex:1;
   overflow: auto;
 }
 
-.config .form-group {
+.App .config .form-group {
   padding-top: 10px;
   min-height: 25px;
   display: inline-block;
   margin-right: 10px;
 }
 
-.config .form-group label {
+.App .config .form-group label {
   margin-right: 13px;
 }
 
-.buttons {
+.App .buttons {
   height: 60px;
 }
 
-.buttons button {
+.App .buttons button {
   margin-top: 10px;
   font-size: 20px;
   padding: 13px 22px;
@@ -110,15 +109,15 @@ iframe {
   color: white;
   /*font-weight: bold;*/
   cursor: pointer;
-  font-family: 'Source Sans Pro';
+  font-family: 'Lato', sans-serif;
   outline: none;
 
 }
-.buttons button:hover i {
+.App .buttons button:hover i {
   transform: scale(1.5);
 }
 
-.buttons button i {
+.App .buttons button i {
   vertical-align: top;
   font-size: 20px;
   margin-right: 10px;
@@ -126,42 +125,42 @@ iframe {
 }
 
 
-input, select {
-  font-family: 'Source Sans Pro';
+.App input, .App select {
+  font-family: 'Lato', sans-serif;
 }
 
-input[type="number"] {
+.App input[type="number"] {
   width: 30px;
 }
 
-input[type="text"], input[type="number"], select  {
+.App input[type="text"], .App input[type="number"], .App select  {
   padding: 5px;
   background-color: transparent;
   border: 1px solid grey;
 }
 
-select {
-  height: 30px;
+.App select {
+  /*height: 30px;*/
 }
 
-input[type="color"] {
+.App input[type="color"] {
   border: none;
   background: white;
   width: 50px;
   height: 25px;
 }
 
-input[type="checkbox"], input[type="radio"] {
+.App input[type="checkbox"], .App input[type="radio"] {
   vertical-align: middle;
   margin-left: -7px;  
 }
 
-input[type="radio"] {
+.App input[type="radio"] {
   margin-top: 0px;
   margin-right: 15px;
 }   
 
-.info {
+.App .info {
   float:right;
   color: #20BEB8;
   background: none;
@@ -172,11 +171,11 @@ input[type="radio"] {
   margin-right: 10px;
 }
 
-.info i {
+.App .info i {
   line-height: 60px;
 }
 
-.modal {
+.App .modal {
   position:fixed;
   top: 0;
   bottom: 0;
@@ -188,21 +187,21 @@ input[type="radio"] {
   justify-content: center;
 }
 
-h3 {
+.App h3 {
   font-size: 1.3em;
   margin: 0px;
   color: #20BEB8;
 }
 
-h4{
+.App h4 {
   color: grey;
   margin-bottom: 0px;
 }
-.modal.hidden {
+.App .modal.hidden {
   display: none;
 }
 
-.modal .overlay {
+.App .modal .overlay {
   background-color: rgba(0,0,0,0.6);
   width: 100%;
   height: 100%;
@@ -210,7 +209,7 @@ h4{
   z-index: -1;
 }
 
-.modal .modal-body {
+.App .modal .modal-body {
   background-color: white;
   height: auto;
   min-width: 300px;
@@ -221,55 +220,57 @@ h4{
   text-align: left;
 }
 
-.modal-close {
+.App .modal-close {
   background: none;
   outline: none;
   border: none;
   cursor: pointer;
   float: right;
 }
-.modal-body a {
+.App .modal-body a {
   color: #20BEB8;
   text-decoration: none;
   /*font-weight: bolder;*/
 }
-.modal-body a:hover {
+
+.App .modal-body a:hover {
   text-decoration: underline;
 
 }
 
-hr{
+.App hr{
   border: 1px solid #ccc;
 }
-input {
+
+.App input {
   max-width: 300px;
 }
 
 
 
 @media (max-width: 800px) {
-  .content {
+  .App .content {
     flex-direction: column;
     display: block;
   }
-  .content-col {
+  .App .content-col {
     width: calc(100% - 70px);
     height: auto;
   }
 
-  .left {
+  .App .left {
     border-right: none;
   }
 
-  .right {
+  .App .right {
     height: 40%;
   }
   
-  iframe {
+  .App  iframe {
     height: 100%;
   }
 
-  .modal .modal-body {
+  .App .modal .modal-body {
     max-width: 90%;
   }
 

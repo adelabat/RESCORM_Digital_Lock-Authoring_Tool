@@ -10,7 +10,7 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <!--
@@ -24,10 +24,21 @@
     -->
     <title>DIGITAL LOCK</title>
   </head>
-  <body>
+  <body id="rescorm">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+    <script>
+      window.state = {
+        puzzleOptions: {
+          1: [{id: 1, name: "Puzzle 1 ER1", answer: "1234"}, {id: 2, name: "Puzzle 2 ER1", answer: "5678"}, {id: 5, name: "Puzzle 3 ER1", answer: "8132"}],
+          2: [{id: 3, name: "Puzzle 1 ER2", answer: "9101"}, {id: 4, name: "Puzzle 2 ER2", answer: "1121"}]
+        },
+        action: "/apps/1",
+        erOptions: [{id: 1, name: "ER 1"}, {id: 2, name: "ER 2"}],
+        embeddedInEscapp: true
+      };
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
