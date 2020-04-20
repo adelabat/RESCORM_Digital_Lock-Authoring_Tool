@@ -10,8 +10,8 @@ By filling in the fields of the web form and clicking the download button, you c
 1. Install [node.js](https://nodejs.org/es/download/) and [git](https://git-scm.com/downloads).
 2. Open a new terminal, go to your working directory and clone this GitHub poject:
     ```bash
-    git clone https://github.com/adelabat/Rescorm_Digital-Lock_Generator
-    cd Rescorm_Digital-Lock_Generator
+    git clone https://github.com/adelabat/RESCORM_Digital_Lock-Authoring_Tool
+    cd RESCORM_Digital_Lock-Authoring_Tool
     ```
 3. Execute the following command to install all the project dependencies in the 'node_modules' folder:
     ```bash
